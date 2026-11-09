@@ -1,0 +1,1654 @@
+[
+  {
+    "name"                 : "activity-create",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "activity-delete",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "activity-get-list",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "activity-get-one",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "activity-update",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "businessline-get-list",
+    "service"              : "service-directory",
+    "scopes"               : ["references:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "businessline-get-one",
+    "service"              : "service-directory",
+    "scopes"               : ["references:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "contact-profile-get-list",
+    "service"              : "service-directory",
+    "scopes"               : ["references:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "contact-profile-get-one",
+    "service"              : "service-directory",
+    "scopes"               : ["references:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "customer-create",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "customer-delete",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "customer-get-list",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "customer-get-one",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "customer-update",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "fiscal-catalog-get-list",
+    "service"              : "service-directory",
+    "scopes"               : ["references:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "opportunity-create",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "opportunity-delete",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "opportunity-get-list",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "opportunity-get-one",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "opportunity-get-summary",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "opportunity-update",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "pipeline-create",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "pipeline-delete",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "pipeline-get-assignees",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "pipeline-get-board",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "pipeline-get-customers",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "pipeline-get-list",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "pipeline-get-one",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "pipeline-type-create",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "pipeline-type-delete",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "pipeline-type-get-list",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "pipeline-type-get-one",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "pipeline-type-update",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "pipeline-update",
+    "service"              : "service-customer",
+    "scopes"               : ["customer:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-assignment-create",
+    "service"              : "service-product",
+    "scopes"               : ["product:prices"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-assignment-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-assignment-get-one",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-assignment-update",
+    "service"              : "service-product",
+    "scopes"               : ["product:prices"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-attribute-create",
+    "service"              : "service-product",
+    "scopes"               : ["product:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-attribute-delete",
+    "service"              : "service-product",
+    "scopes"               : ["product:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-attribute-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-attribute-get-one",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-attribute-update",
+    "service"              : "service-product",
+    "scopes"               : ["product:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-category-create",
+    "service"              : "service-product",
+    "scopes"               : ["product:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-category-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-category-get-one",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-category-update",
+    "service"              : "service-product",
+    "scopes"               : ["product:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-customer-price-list-get",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-item-create",
+    "service"              : "service-product",
+    "scopes"               : ["product:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-item-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-item-get-one",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-item-prices-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-item-save",
+    "service"              : "service-product",
+    "scopes"               : ["product:write", "product:prices"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-item-update",
+    "service"              : "service-product",
+    "scopes"               : ["product:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-price-create",
+    "service"              : "service-product",
+    "scopes"               : ["product:prices"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-price-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-price-get-one",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-price-list-create",
+    "service"              : "service-product",
+    "scopes"               : ["product:prices"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-price-list-delete",
+    "service"              : "service-product",
+    "scopes"               : ["product:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-price-list-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-price-list-get-one",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-price-list-update",
+    "service"              : "service-product",
+    "scopes"               : ["product:prices"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-price-matrix-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-price-update",
+    "service"              : "service-product",
+    "scopes"               : ["product:prices"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-sale-resolve",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-sku-create",
+    "service"              : "service-product",
+    "scopes"               : ["product:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-sku-delete",
+    "service"              : "service-product",
+    "scopes"               : ["product:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "product-sku-get-list",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-sku-get-one",
+    "service"              : "service-product",
+    "scopes"               : ["product:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "product-sku-update",
+    "service"              : "service-product",
+    "scopes"               : ["product:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true
+  },
+  {
+    "name"                 : "user-directory-get-list",
+    "service"              : "service-security",
+    "scopes"               : ["references:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "workspace-users-get-list",
+    "service"              : "service-security",
+    "scopes"               : ["references:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "role-create",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "role-get-list",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "role-get-one",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "role-delete",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "role-update",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "businessline-create",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "businessline-delete",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "businessline-update",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "department-create",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "department-get-list",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "department-get-one",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "department-delete",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "department-update",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "job-create",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "job-get-list",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "job-get-one",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "job-delete",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "job-update",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "contact-create",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "contact-get-list",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "contact-get-one",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "contact-delete",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "contact-update",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "contact-update-email",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "contact-add-email",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "contact-remove-email",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "requireRevision"      : true
+  },
+  {
+    "name"                 : "contact-visibility-update",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:settings"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "fiscal-profile-validate",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "fiscal-values-validate",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "role-labels-get-list",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "contact-visibility-get",
+    "service"              : "service-directory",
+    "scopes"               : ["directory:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false
+  },
+  {
+    "name"                 : "billing-issuer-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-issuer-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-receipt-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-receipt-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-operation-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-operation-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-audit-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-audit-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-issuer-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:issuers"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "resourceWorkspace"    : true
+  },
+  {
+    "name"                 : "billing-issuer-update",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:issuers"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "resourceWorkspace"    : true
+  },
+  {
+    "name"                 : "billing-document-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-update",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-issuer-cancellations-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-issue",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:issue"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-refresh-customer",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-cancel",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:cancel"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-reconcile",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:reconcile"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-deliver",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:send"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-download-prepare",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "transfer"             : "billing-download"
+  },
+  {
+    "name"                 : "billing-cancellation-authorize",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:cancel"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-receipt-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:receipts"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-receipt-reverse",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:receipts"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-receipt-rep-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:receipts"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-redate",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-document-discard",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-repositories-get-list",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-entries-get-list",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-folder-create",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-entry-get-one",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-entry-rename",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-entry-move",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-trash-get-list",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-entry-restore",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-entry-delete",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:delete"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-favorites-get-list",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-favorite-create",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-favorite-delete",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "documents-file-upload-prepare",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:upload"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "transfer"             : "upload"
+  },
+  {
+    "name"                 : "documents-entry-download-prepare",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:download"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "transfer"             : "download"
+  },
+  {
+    "name"                 : "documents-upload-status",
+    "service"              : "service-documents",
+    "scopes"               : ["documents:upload"],
+    "write"                : false,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"    : "contact-visibility-state-get",
+    "service" : "service-directory",
+    "scopes"  : ["directory:settings"],
+    "write"   : false
+  },
+  {
+    "name"    : "documents-settings-get",
+    "service" : "service-documents",
+    "scopes"  : ["documents:settings"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "documents-settings-update",
+    "service" : "service-documents",
+    "scopes"  : ["documents:settings"],
+    "write"   : true,
+    "durable" : true
+  },
+  {
+    "name"    : "chat-participants-get-list",
+    "service" : "service-communication",
+    "scopes"  : ["communication:read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "chat-get-list",
+    "service" : "service-communication",
+    "scopes"  : ["communication:read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "chat-get-one",
+    "service" : "service-communication",
+    "scopes"  : ["communication:read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "chat-unread-count",
+    "service" : "service-communication",
+    "scopes"  : ["communication:read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "chat-messages-get-list",
+    "service" : "service-communication",
+    "scopes"  : ["communication:read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "chat-contact-profile-get",
+    "service" : "service-communication",
+    "scopes"  : ["communication:read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"         : "chat-create",
+    "service"      : "service-communication",
+    "scopes"       : ["communication:write"],
+    "write"        : true,
+    "durable"      : true,
+    "requestIdFor" : "chat-create"
+  },
+  {
+    "name"          : "chat-update",
+    "service"       : "service-communication",
+    "scopes"        : ["communication:write"],
+    "write"         : true,
+    "requiredInput" : ["expectedRevision"],
+    "durable"       : true
+  },
+  {
+    "name"          : "chat-send",
+    "service"       : "service-communication",
+    "scopes"        : ["communication:send"],
+    "write"         : true,
+    "requiredInput" : ["expectedRevision", "expectedAudienceVersion"],
+    "durable"       : true,
+    "requestIdFor"  : "chat-send",
+    "inputFields"   : [
+      "code",
+      "requestId",
+      "text",
+      "attachmentCodes",
+      "mentionedUserCodes",
+      "expectedRevision",
+      "expectedAudienceVersion"
+    ]
+  },
+  {
+    "name"          : "chat-product-send",
+    "service"       : "service-communication",
+    "scopes"        : ["communication:send", "product:read"],
+    "write"         : true,
+    "requiredInput" : ["expectedRevision", "expectedAudienceVersion"],
+    "durable"       : true,
+    "requestIdFor"  : "chat-product-send"
+  },
+  {
+    "name"    : "chat-message-retract",
+    "service" : "service-communication",
+    "scopes"  : ["communication:delete"],
+    "write"   : true,
+    "durable" : true
+  },
+  {
+    "name"    : "chat-messages-mark-read",
+    "service" : "service-communication",
+    "scopes"  : ["communication:read-state"],
+    "write"   : true,
+    "durable" : true
+  },
+  {
+    "name"    : "timeline-get-list",
+    "service" : "service-communication",
+    "scopes"  : ["communication:timeline-read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "timeline-get-one",
+    "service" : "service-communication",
+    "scopes"  : ["communication:timeline-read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "timeline-request-get",
+    "service" : "service-communication",
+    "scopes"  : ["communication:timeline-read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"         : "timeline-note-create",
+    "service"      : "service-communication",
+    "scopes"       : ["communication:timeline-write"],
+    "write"        : true,
+    "durable"      : true,
+    "requestIdFor" : "timeline-note-create"
+  },
+  {
+    "name"                 : "chat-request-get",
+    "service"              : "service-communication",
+    "scopes"               : ["communication:read"],
+    "write"                : false,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"           : "chat-upload-prepare",
+    "service"        : "service-communication",
+    "scopes"         : ["communication:upload"],
+    "write"          : true,
+    "transfer"       : "chat-upload",
+    "transferAction" : "chat-upload",
+    "requestIdFor"   : "chat-upload",
+    "durable"        : true
+  },
+  {
+    "name"           : "chat-download-prepare",
+    "service"        : "service-communication",
+    "scopes"         : ["communication:download"],
+    "write"          : false,
+    "transfer"       : "chat-download",
+    "transferAction" : "chat-download",
+    "durable"        : true
+  },
+  {
+    "name"           : "chat-preview-prepare",
+    "service"        : "service-communication",
+    "scopes"         : ["communication:download"],
+    "write"          : false,
+    "transfer"       : "chat-preview",
+    "transferAction" : "chat-preview",
+    "durable"        : true
+  },
+  {
+    "name"           : "chat-sender-picture-prepare",
+    "service"        : "service-communication",
+    "scopes"         : ["communication:download"],
+    "write"          : false,
+    "transfer"       : "chat-sender-picture",
+    "transferAction" : "chat-sender-picture-read",
+    "durable"        : true
+  },
+  {
+    "name"           : "chat-group-picture-prepare",
+    "service"        : "service-communication",
+    "scopes"         : ["communication:download"],
+    "write"          : false,
+    "transfer"       : "chat-picture",
+    "transferAction" : "chat-group-picture-read",
+    "durable"        : true
+  },
+  {
+    "name"           : "chat-group-picture-update-prepare",
+    "service"        : "service-communication",
+    "scopes"         : ["communication:write", "communication:upload"],
+    "write"          : true,
+    "transfer"       : "chat-picture-upload",
+    "transferAction" : "chat-group-picture-upload",
+    "requestIdFor"   : "chat-group-picture-upload",
+    "durable"        : true
+  },
+  {
+    "name"           : "timeline-author-picture-prepare",
+    "service"        : "service-communication",
+    "scopes"         : ["communication:timeline-read", "communication:download"],
+    "write"          : false,
+    "transfer"       : "timeline-picture",
+    "transferAction" : "timeline-author-picture-read",
+    "durable"        : true
+  },
+  {
+    "name"                 : "billing-sale-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-update",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-confirm",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-cancel",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-invoice-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-global-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-extraction-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-extraction-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-extraction-advance",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-sale-download-prepare",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "transfer"             : "billing-sale-download"
+  },
+  {
+    "name"                 : "billing-receipt-download-prepare",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "transfer"             : "billing-receipt-download"
+  },
+  {
+    "name"                 : "billing-expense-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-payment-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-payment-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-category-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-category-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-cost-center-get-one",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-cost-center-get-list",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-category-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-category-update",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-cost-center-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-cost-center-update",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-update",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-confirm",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-cancel",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-discard",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-payment-create",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-payment-reverse",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-file-upload-prepare",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true,
+    "transfer"             : "billing-expense-upload"
+  },
+  {
+    "name"                 : "billing-expense-file-download-prepare",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true,
+    "transfer"             : "billing-expense-download"
+  },
+  {
+    "name"                 : "billing-expense-xml-preview",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:read"],
+    "write"                : false,
+    "canonicalIdempotency" : false,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-xml-apply",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true
+  },
+  {
+    "name"                 : "billing-expense-import-prepare",
+    "service"              : "service-billing",
+    "scopes"               : ["billing:write"],
+    "write"                : true,
+    "canonicalIdempotency" : true,
+    "durable"              : true,
+    "transfer"             : "billing-expense-import"
+  },
+  {
+    "name"    : "oauth-realtime-ticket-create",
+    "service" : "service-security",
+    "scopes"  : ["documents:read"],
+    "write"   : false,
+    "durable" : false
+  },
+  {
+    "name"    : "documents-repository-manifest-get",
+    "service" : "service-documents",
+    "scopes"  : ["documents:read"],
+    "write"   : false,
+    "durable" : true
+  },
+  {
+    "name"    : "documents-repository-read",
+    "service" : "service-platform",
+    "scopes"  : ["documents:read"],
+    "write"   : false,
+    "durable" : false
+  },
+  {
+    "name"    : "documents-repositories-read",
+    "service" : "service-platform",
+    "scopes"  : ["documents:read"],
+    "write"   : false,
+    "durable" : false
+  }
+]

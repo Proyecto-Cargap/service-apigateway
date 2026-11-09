@@ -1,0 +1,838 @@
+{
+  "service"          : "service-apigateway",
+  "transport"        : "rpc",
+  "naming"           : "recurso-operación en minúsculas con guiones; los eventos conservan el nombre de dominio con puntos.",
+  "authority"        : "La identidad y el alcance proceden del contexto autenticado del transporte. Las consultas y sus proyecciones no dependen del consumidor.",
+  "responseEnvelope" : {
+    "type"                 : "object",
+    "required"             : ["statusCode", "descriptionCode"],
+    "properties"           : {
+      "statusCode"      : {
+        "type"    : "integer",
+        "minimum" : 100,
+        "maximum" : 599
+      },
+      "descriptionCode" : {
+        "type" : "string"
+      },
+      "data"            : {}
+    },
+    "additionalProperties" : false
+  },
+  "endpoints"        : [
+    {
+      "name"          : "health",
+      "kind"          : "action",
+      "request"       : {
+        "type"                 : "object",
+        "properties"           : {},
+        "required"             : [],
+        "additionalProperties" : false
+      },
+      "response"      : {
+        "$ref" : "#/responseEnvelope"
+      },
+      "authorization" : "service-identity",
+      "description"   : "Operación de dominio health. Su controlador valida las reglas de negocio y los permisos aplicables.",
+      "dto"           : "server/modules/system/dtos/system.actions.dto.js"
+    },
+    {
+      "name"          : "service-contracts-get",
+      "kind"          : "action",
+      "request"       : {
+        "type"                 : "object",
+        "properties"           : {},
+        "required"             : [],
+        "additionalProperties" : false
+      },
+      "response"      : {
+        "$ref" : "#/responseEnvelope"
+      },
+      "authorization" : "service-identity",
+      "successData"   : {
+        "type"     : "object",
+        "required" : ["service", "endpoints", "responseEnvelope"]
+      },
+      "description"   : "Devuelve este contrato vigente, sus operaciones y estructuras de entrada y salida.",
+      "dto"           : "server/modules/system/dtos/system.actions.dto.js"
+    },
+    {
+      "name"          : "meta-platform-execute",
+      "kind"          : "action",
+      "request"       : {
+        "oneOf" : [
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["provision"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {},
+                "required"             : [],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-create"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "requestId" : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  },
+                  "name"      : {
+                    "type"      : "string",
+                    "maxLength" : 100
+                  }
+                },
+                "required"             : [],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-get"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {},
+                "required"             : [],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-history"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "before" : {
+                    "type"      : ["integer", "string"],
+                    "minimum"   : 1,
+                    "maxLength" : 100
+                  }
+                },
+                "required"             : [],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-send"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "requestId"          : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  },
+                  "text"               : {
+                    "type"      : "string",
+                    "maxLength" : 10000
+                  },
+                  "attachmentCodes"    : {
+                    "type"     : "array",
+                    "items"    : {
+                      "type"      : "string",
+                      "minLength" : 1,
+                      "maxLength" : 100
+                    },
+                    "maxItems" : 5
+                  },
+                  "mentionedUserCodes" : {
+                    "type"     : "array",
+                    "maxItems" : 0
+                  }
+                },
+                "required"             : ["requestId"],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode", "data"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-upload"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "requestId"    : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  },
+                  "name"         : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 255
+                  },
+                  "mime"         : {
+                    "type"      : "string",
+                    "maxLength" : 100
+                  },
+                  "size"         : {
+                    "type"    : "integer",
+                    "minimum" : 1,
+                    "maximum" : 20971520
+                  },
+                  "tempFilePath" : {
+                    "type"      : "string",
+                    "maxLength" : 4096
+                  },
+                  "digest"       : {
+                    "type"    : "string",
+                    "pattern" : "^[a-f0-9]{64}$"
+                  }
+                },
+                "required"             : ["requestId", "name", "size", "tempFilePath", "digest"],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode", "data"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-download"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "messageCode"    : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  },
+                  "attachmentCode" : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  }
+                },
+                "required"             : ["attachmentCode"],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode", "data"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-add-operator"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "userCode" : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  }
+                },
+                "required"             : ["userCode"],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode", "data"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["run-create"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "requestId"        : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  },
+                  "conversationCode" : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  },
+                  "messageCode"      : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  }
+                },
+                "required"             : ["requestId", "messageCode"],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode", "data"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["run-get"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "runCode" : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  }
+                },
+                "required"             : ["runCode"],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode", "data"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-prepare-automation"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {},
+                "required"             : [],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "operation"        : {
+                "enum" : ["chat-retract"]
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "data"             : {
+                "type"                 : "object",
+                "properties"           : {
+                  "requestId"   : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  },
+                  "messageCode" : {
+                    "type"      : "string",
+                    "minLength" : 1,
+                    "maxLength" : 100
+                  }
+                },
+                "required"             : ["requestId"],
+                "additionalProperties" : false
+              }
+            },
+            "required"             : ["operation", "conversationCode", "data"],
+            "additionalProperties" : false
+          }
+        ]
+      },
+      "response"      : {
+        "$ref" : "#/responseEnvelope"
+      },
+      "authorization" : "service-connect-only; recursos derivados de vínculo interno y Security vigente",
+      "description"   : "Capacidades limitadas de contacto/chat/run; medios TEMP compartido hasta20MiB; nunca cancela ejecuciones.",
+      "dto"           : "server/modules/meta-bridge/dtos/meta-bridge.actions.dto.js",
+      "successData"   : {
+        "anyOf" : [
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "contactCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 120
+              },
+              "userCode"    : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 120
+              }
+            },
+            "required"             : ["contactCode", "userCode"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "conversationCode" : {
+                "type" : "string"
+              },
+              "kind"             : {
+                "type" : "string"
+              },
+              "name"             : {
+                "type" : "string"
+              },
+              "audienceVersion"  : {
+                "type" : "string"
+              },
+              "revision"         : {
+                "type"    : "integer",
+                "minimum" : 0
+              },
+              "sequence"         : {
+                "type"    : "integer",
+                "minimum" : 0
+              },
+              "members"          : {
+                "type"     : "array",
+                "items"    : {
+                  "type"                 : "object",
+                  "properties"           : {
+                    "userCode"       : {
+                      "type" : "string"
+                    },
+                    "name"           : {
+                      "type" : "string"
+                    },
+                    "email"          : {
+                      "type" : "string"
+                    },
+                    "actorType"      : {
+                      "type" : "string"
+                    },
+                    "agentCode"      : {
+                      "type" : "string"
+                    },
+                    "isAdmin"        : {
+                      "type" : "boolean"
+                    },
+                    "joinedSequence" : {
+                      "type"    : "integer",
+                      "minimum" : 0
+                    }
+                  },
+                  "required"             : ["userCode"],
+                  "additionalProperties" : false
+                },
+                "maxItems" : 100
+              }
+            },
+            "required"             : ["conversationCode", "members"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "items"   : {
+                "type"  : "array",
+                "items" : {
+                  "type"                 : "object",
+                  "properties"           : {
+                    "messageCode"        : {
+                      "type" : "string"
+                    },
+                    "conversationCode"   : {
+                      "type" : "string"
+                    },
+                    "userCode"           : {
+                      "type" : "string"
+                    },
+                    "senderName"         : {
+                      "type" : "string"
+                    },
+                    "text"               : {
+                      "type" : "string"
+                    },
+                    "requestId"          : {
+                      "type" : "string"
+                    },
+                    "actorType"          : {
+                      "type" : "string"
+                    },
+                    "agentCode"          : {
+                      "type" : "string"
+                    },
+                    "sequence"           : {
+                      "type"    : "integer",
+                      "minimum" : 0
+                    },
+                    "creationDate"       : {
+                      "type" : "number"
+                    },
+                    "mentionedUserCodes" : {
+                      "type"  : "array",
+                      "items" : {
+                        "type"      : "string",
+                        "minLength" : 1,
+                        "maxLength" : 120
+                      }
+                    },
+                    "attachments"        : {
+                      "type"     : "array",
+                      "items"    : {
+                        "type"                 : "object",
+                        "properties"           : {
+                          "attachmentCode" : {
+                            "type"      : "string",
+                            "minLength" : 1,
+                            "maxLength" : 120
+                          },
+                          "name"           : {
+                            "type" : "string"
+                          },
+                          "size"           : {
+                            "type"    : "integer",
+                            "minimum" : 0
+                          },
+                          "mime"           : {
+                            "type" : "string"
+                          },
+                          "audioOrigin"    : {
+                            "enum" : ["generated"]
+                          }
+                        },
+                        "required"             : ["attachmentCode", "name", "size", "mime"],
+                        "additionalProperties" : false
+                      },
+                      "maxItems" : 5
+                    },
+                    "retracted"          : {
+                      "type" : "boolean"
+                    },
+                    "retractedAt"        : {
+                      "type"    : "integer",
+                      "minimum" : 1
+                    }
+                  },
+                  "required"             : [
+                    "messageCode",
+                    "conversationCode",
+                    "sequence",
+                    "userCode",
+                    "text",
+                    "attachments"
+                  ],
+                  "additionalProperties" : false
+                }
+              },
+              "hasMore" : {
+                "type" : "boolean"
+              }
+            },
+            "required"             : ["items", "hasMore"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "messageCode"        : {
+                "type" : "string"
+              },
+              "conversationCode"   : {
+                "type" : "string"
+              },
+              "userCode"           : {
+                "type" : "string"
+              },
+              "senderName"         : {
+                "type" : "string"
+              },
+              "text"               : {
+                "type" : "string"
+              },
+              "requestId"          : {
+                "type" : "string"
+              },
+              "actorType"          : {
+                "type" : "string"
+              },
+              "agentCode"          : {
+                "type" : "string"
+              },
+              "sequence"           : {
+                "type"    : "integer",
+                "minimum" : 0
+              },
+              "creationDate"       : {
+                "type" : "number"
+              },
+              "mentionedUserCodes" : {
+                "type"  : "array",
+                "items" : {
+                  "type"      : "string",
+                  "minLength" : 1,
+                  "maxLength" : 120
+                }
+              },
+              "attachments"        : {
+                "type"     : "array",
+                "items"    : {
+                  "type"                 : "object",
+                  "properties"           : {
+                    "attachmentCode" : {
+                      "type"      : "string",
+                      "minLength" : 1,
+                      "maxLength" : 120
+                    },
+                    "name"           : {
+                      "type" : "string"
+                    },
+                    "size"           : {
+                      "type"    : "integer",
+                      "minimum" : 0
+                    },
+                    "mime"           : {
+                      "type" : "string"
+                    },
+                    "audioOrigin"    : {
+                      "enum" : ["generated"]
+                    }
+                  },
+                  "required"             : ["attachmentCode", "name", "size", "mime"],
+                  "additionalProperties" : false
+                },
+                "maxItems" : 5
+              },
+              "retracted"          : {
+                "type" : "boolean"
+              },
+              "retractedAt"        : {
+                "type"    : "integer",
+                "minimum" : 1
+              }
+            },
+            "required"             : [
+              "messageCode",
+              "conversationCode",
+              "sequence",
+              "userCode",
+              "text",
+              "attachments"
+            ],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "attachmentCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 120
+              },
+              "name"           : {
+                "type" : "string"
+              },
+              "size"           : {
+                "type"    : "integer",
+                "minimum" : 0
+              },
+              "mime"           : {
+                "type" : "string"
+              },
+              "audioOrigin"    : {
+                "enum" : ["generated"]
+              }
+            },
+            "required"             : ["attachmentCode", "name", "size", "mime"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "tempFilePath" : {
+                "type"      : "string",
+                "maxLength" : 4096
+              },
+              "name"         : {
+                "type" : "string"
+              },
+              "mime"         : {
+                "type" : "string"
+              },
+              "size"         : {
+                "type"    : "integer",
+                "minimum" : 1,
+                "maximum" : 20971520
+              }
+            },
+            "required"             : ["tempFilePath", "name", "mime", "size"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 120
+              }
+            },
+            "required"             : ["conversationCode"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "runCode"            : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 120
+              },
+              "status"             : {
+                "type" : "string"
+              },
+              "errorCode"          : {
+                "type" : ["string", "null"]
+              },
+              "cancelRequested"    : {
+                "type" : "boolean"
+              },
+              "resultAvailability" : {
+                "type" : "string"
+              }
+            },
+            "required"             : ["runCode", "status"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "ready" : {
+                "type" : "boolean"
+              }
+            },
+            "required"             : ["ready"],
+            "additionalProperties" : false
+          },
+          {
+            "type"                 : "object",
+            "properties"           : {
+              "messageCode"      : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "conversationCode" : {
+                "type"      : "string",
+                "minLength" : 1,
+                "maxLength" : 100
+              },
+              "sequence"         : {
+                "type"    : "integer",
+                "minimum" : 1
+              },
+              "retracted"        : {
+                "type" : "boolean",
+                "enum" : [true]
+              },
+              "retractedAt"      : {
+                "type"    : "integer",
+                "minimum" : 1
+              }
+            },
+            "required"             : ["messageCode", "conversationCode", "sequence", "retracted", "retractedAt"],
+            "additionalProperties" : false
+          }
+        ]
+      }
+    }
+  ],
+  "description"      : "Contrato vigente del servicio. service-contracts-get permite descubrir las operaciones y sus estructuras en ejecución."
+}

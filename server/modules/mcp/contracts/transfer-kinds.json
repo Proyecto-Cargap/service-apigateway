@@ -1,0 +1,77 @@
+{
+  "upload"                   : {
+    "method"  : "POST",
+    "service" : "service-documents",
+    "action"  : "documents-file-upload"
+  },
+  "download"                 : {
+    "method"  : "GET",
+    "service" : "service-documents",
+    "action"  : "documents-entry-download"
+  },
+  "billing-download"         : {
+    "method"  : "GET",
+    "service" : "service-billing",
+    "action"  : "billing-document-file-get"
+  },
+  "chat-upload"              : {
+    "method"  : "POST",
+    "service" : "service-communication",
+    "action"  : "chat-upload"
+  },
+  "chat-picture-upload"      : {
+    "method"  : "POST",
+    "service" : "service-communication",
+    "action"  : "chat-group-picture-upload"
+  },
+  "chat-download"            : {
+    "method"  : "GET",
+    "service" : "service-communication",
+    "action"  : "chat-download"
+  },
+  "chat-preview"             : {
+    "method"  : "GET",
+    "service" : "service-communication",
+    "action"  : "chat-preview"
+  },
+  "chat-sender-picture"      : {
+    "method"  : "GET",
+    "service" : "service-communication",
+    "action"  : "chat-sender-picture-read"
+  },
+  "chat-picture"             : {
+    "method"  : "GET",
+    "service" : "service-communication",
+    "action"  : "chat-group-picture-read"
+  },
+  "timeline-picture"         : {
+    "method"  : "GET",
+    "service" : "service-communication",
+    "action"  : "timeline-author-picture-read"
+  },
+  "billing-sale-download"    : {
+    "method"  : "GET",
+    "service" : "service-billing",
+    "action"  : "billing-sale-file-get"
+  },
+  "billing-receipt-download" : {
+    "method"  : "GET",
+    "service" : "service-billing",
+    "action"  : "billing-receipt-file-get"
+  },
+  "billing-expense-upload"   : {
+    "method"  : "POST",
+    "service" : "service-billing",
+    "action"  : "billing-expense-file-upload"
+  },
+  "billing-expense-download" : {
+    "method"  : "GET",
+    "service" : "service-billing",
+    "action"  : "billing-expense-file-get"
+  },
+  "billing-expense-import"   : {
+    "method"  : "POST",
+    "service" : "service-billing",
+    "action"  : "billing-expense-import-upload"
+  }
+}
